@@ -1,0 +1,20 @@
+<h1>Criando nova receita</h1>
+
+<% if flash[:notice]%>
+  <div style = "margin:10px 0px" >
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with model: @recipe_type do | f | %>
+  <div>
+    <%= f.label :name, 'Nome'%><br/>
+    <%= f.text_field :name %><br/>
+  
+</div>
+
+  <div>
+    <%= f.submit 'Salvar' %>
+  </div>
+
+  <% end %>

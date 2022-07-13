@@ -1,0 +1,35 @@
+
+<h1>Informações sobre a receita: <%= @recipe.name%> </h1>
+<%= link_to 'Editar', edit_recipe_path%>
+
+<dl>
+  <dt> 
+  <strong>Nome:</strong> <%= @recipe.name %><br/>
+  </dt>
+
+<dd> 
+  <strong>Tipo de receita:</strong> <%= @recipe.recipe_type.name if @recipe.recipe_type %><br/>
+  </dd>
+
+  <dd> 
+  <strong>Culinária:</strong> <%= @recipe.cuisine %><br/>
+  </dd>
+
+<dd> 
+  <strong>Ingredientes:</strong> <%= @recipe.ingredients %><br/>
+  </dd>
+
+<dd> 
+  <strong>Modo de preparo:</strong> <%=  @recipe.cook_method %><br/>
+  </dd>
+
+<dd> 
+  <strong>Tempo de preparo:</strong> <%= @recipe.cook_time %><br/>
+  </dd>
+
+  <dd> 
+  <strong>Status:</strong> <%= @recipe.status %><br/>
+  </dd>
+</dl>
+
+<%= button_to 'publicar', publish_recipe_path,  { method: 'patch'} %>
